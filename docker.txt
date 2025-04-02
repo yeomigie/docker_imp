@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Set environment variables with defaults
-ENV QR_DATA_URL=https://github.com/kaw393939
+ENV QR_DATA_URL=https://github.com/yeomigie
 ENV QR_CODE_DIR=qr_codes
 ENV QR_CODE_FILENAME=github_qr.png
 ENV FILL_COLOR=black
