@@ -42,7 +42,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     # Get values from environment variables with fallbacks
-    qr_data = args.url or os.getenv('QR_DATA_URL', 'https://github.com/kaw39393')
+    qr_data = args.url or os.getenv('QR_DATA_URL', 'https://github.com/yeomigie')
     output_dir = os.getenv('QR_CODE_DIR', 'qr_codes')
     filename = os.getenv('QR_CODE_FILENAME', 'github_qr.png')
     fill_color = os.getenv('FILL_COLOR', 'black')
