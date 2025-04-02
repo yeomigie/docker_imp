@@ -1,0 +1,27 @@
+# Use official Python image
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements first to leverage Docker cache
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application
+COPY . .
+
+# Set environment variables with defaults
+ENV QR_DATA_URL=https://github.com/kaw393939
+ENV QR_CODE_DIR=qr_codes
+ENV QR_CODE_FILENAME=github_qr.png
+ENV FILL_COLOR=black
+ENV BACK_COLOR=white
+
+# Make the script executable
+RUN chmod +x main.py
+
+# Command to run the application
+ENTRYPOINT ["python", "main.py"]
